@@ -5,6 +5,7 @@ const JobSchema = new Schema({
   location: String,
   description: String,
   datePosted: Date,
+  company: String,
 }, {
   toJSON: {
     virtuals: true,

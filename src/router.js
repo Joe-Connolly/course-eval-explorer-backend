@@ -3,7 +3,6 @@ import * as Reviews from './controllers/review_controller';
 import * as Jobs from './controllers/jobs_controller';
 
 
-
 const router = Router();
 
 router.get('/', (req, res) => {
@@ -16,6 +15,11 @@ router.route('/reviews')
 
 // TODO switch to GET
 router.route('/jobs')
-  .post(Jobs.getJobs);
+  .post(Jobs.createJob)
+  .get(Jobs.getJobs);
+
+router.route('/jobs/:id')
+  .delete(Jobs.deleteJob)
+  .put(Jobs.updateJob);
 
 export default router;
